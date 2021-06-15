@@ -31,9 +31,11 @@ app.get('/weather', (req, res) => {
 
     axios.get(reqWeatherBit).then(response => {
       const responseDataWeatherBit = response.data.data.map(objWeatherBit => new Weather(objWeatherBit));
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "X-Requested-With");
       res.status(200).json(responseDataWeatherBit)
     }).catch(error => {
-      res.send('Something went wrong :' . error.message)
+      res.send('Something went wrong :'.error.message)
     });
   } else {
     res.send('You did not provide the lat and lon')

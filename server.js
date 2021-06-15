@@ -10,7 +10,7 @@ const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
 const cors = require('cors');
 
 app.use(cors()); // after you initialize your express app instance
-
+app.options('*', cors());
 // a server endpoint
 
 // app.get('/weather', // our endpoint name

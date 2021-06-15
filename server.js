@@ -14,9 +14,17 @@ app.use(cors()); // after you initialize your express app instance
 
 app.get('/weather', // our endpoint name
   function (req, res) { // callback function of what we should do with our request
-    res.json(data);// our endpoint function response
+    const resDataWeather = data.data.map( objDataWeather => new Weather(objDataWeather));
+    res.json(resDataWeather);// our endpoint function response
   }
 );
+
+class Weather {
+  constructor(dataForWeather){
+    this.descriptionWeather = dataForWeather.weather.description;
+    this.dateWeather = dataForWeather.valid_date ;
+  }
+}
 
 app.listen(PORT, () => {
   console.log(`Server started : ${PORT}`);

@@ -30,8 +30,8 @@ app.get('/weather', (req, res) => {
     const reqWeatherBit = `https://api.weatherbit.io/v2.0/forecast/daily?key=${WEATHER_API_KEY}&lat=${lat}&lon=${lon}`;
 
     axios.get(reqWeatherBit).then(response => {
-      const responseData = response.data.data.map(objWeatherBit => new Weather(objWeatherBit));
-      res.json(responseData)
+      const responseDataWeatherBit = response.data.data.map(objWeatherBit => new Weather(objWeatherBit));
+      res.json(responseDataWeatherBit)
     }).catch(error => {
       res.send('Something went wrong :' . error.message)
     });

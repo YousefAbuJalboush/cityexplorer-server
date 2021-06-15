@@ -31,7 +31,7 @@ app.get('/weather', (req, res) => {
 
     axios.get(reqWeatherBit).then(response => {
       const responseDataWeatherBit = response.data.data.map(objWeatherBit => new Weather(objWeatherBit));
-      res.json(responseDataWeatherBit)
+      res.status(200).json(responseDataWeatherBit)
     }).catch(error => {
       res.send('Something went wrong :' . error.message)
     });

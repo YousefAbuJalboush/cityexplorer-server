@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const express = require('express');// require the express package
 const app = express(); // initialize your express app instance
 const data = require('./data/weather.json');

@@ -21,6 +21,8 @@ const movieController = (req, res) => {
 
       res.json(cityCacheObj[cityCacheKey]);
 
+      console.log(cityCacheObj[cityCacheKey]);
+
     } else {
 
       const reqTheMovieDB = `https://api.themoviedb.org/3/search/movie?api_key=${MOVIE_API_KEY}&query=${cityName}`;

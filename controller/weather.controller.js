@@ -31,7 +31,7 @@ const weatherController = (req, res) => {
         weatherCacheObj[weatherCacheKey] = responseDataWeatherBit;
 
         weatherCacheObj[weatherCacheKey].timestamp = Date.now();
-        
+
         res.json(responseDataWeatherBit);
       })
         .catch(error => {

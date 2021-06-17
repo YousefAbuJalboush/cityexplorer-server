@@ -1,7 +1,9 @@
 const Weather = require('../models/Weather.model');
-const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
 const axios = require('axios');
 require('dotenv').config();
+
+
+const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
 
  const weatherController = (req, res) => {
 
@@ -10,7 +12,7 @@ require('dotenv').config();
 
   if (lat && lon) {
     const reqWeatherBit = `https://api.weatherbit.io/v2.0/forecast/daily?key=${WEATHER_API_KEY}&lat=${lat}&lon=${lon}`;
-
+    console.log(reqWeatherBit);
     axios.get(reqWeatherBit).then(response => {
       const responseDataWeatherBit = response.data.data.map(objWeatherBit => new Weather(objWeatherBit));
       res.json(responseDataWeatherBit);

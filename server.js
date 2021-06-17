@@ -9,7 +9,7 @@ const weatherController = require('./controller/weather.controller');
 const movieController = require('./controller/movie.controller');
 
 const PORT = process.env.PORT;
-const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
+// const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
 // const MOVIE_API_KEY = process.env.MOVIE_API_KEY;
 
 require('dotenv').config();
